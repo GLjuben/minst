@@ -1,0 +1,31 @@
+<h2 mat-dialog-title *ngIf="!editMode">Add new photo</h2>
+<h2 mat-dialog-title *ngIf="editMode">Edit photo</h2>
+<div mat-dialog-content class="form-container">
+    <mat-form-field hintLabel="Title" appearance="fill">
+        <mat-label>Enter Title</mat-label>
+        <input matInput [formControl]="title" placeholder="Title">
+        <mat-hint align="end">Title</mat-hint>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Enter Album Id</mat-label>
+        <input matInput [formControl]="albumId" placeholder="Album Id">
+        <mat-hint align="end">Album Id</mat-hint>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Enter photo URL</mat-label>
+        <input matInput [formControl]="url" placeholder="Url">
+        <mat-hint align="end">URL</mat-hint>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label></mat-label>
+        <input matInput [formControl]="thumbnailUrl" placeholder="Thumbnail Url">
+        <mat-hint align="end">Thumbnail Url </mat-hint>
+    </mat-form-field>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button [mat-dialog-close]>Cancel</button>
+    <button mat-button *ngIf="!editMode" (click)="addPhoto()">Add</button>
+    <button mat-button *ngIf="editMode" (click)="editPhoto()">Edit</button>
+
+</div>

@@ -1,0 +1,92 @@
+.photos-list:first-child {
+  margin-top: 100px;
+}
+.navbar {
+  width: 100%;
+  height: 10%;
+  margin: 0;
+  margin-bottom: 20px;
+  background: #7400b8;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid #7400b8;
+  border-bottom-left-radius: 2%;
+  border-bottom-right-radius: 2%;
+}
+.home {
+  color: #48bfe3;
+  margin: 15px;
+  cursor: pointer;
+}
+
+.btn-add {
+  margin: 12.5px;
+  background: #48bfe3;
+}
+
+.btn-add:hover {
+  background: #72efdd;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 65%;
+  margin: 15px auto;
+  gap: 10px;
+}
+
+.card-thumbnail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.photo-thumbnail {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.img-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-edit-delete {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-actions {
+  display: flex;
+  gap: 15px;
+}
+.btn-action {
+  color: #48bfe3;
+}
+.btn-action:nth-child(2) {
+  color: #c57446;
+}
+
+.arrow {
+  color: #fff;
+}
+.arrow:hover {
+  color: #fafafa;
+}
+.home {
+  color: #673ab7;
+}
+.home:hover {
+  color: #916dd1;
+}
