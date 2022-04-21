@@ -14,9 +14,6 @@ import { PhotosService } from './photos.service';
 export class HelpersPhotosService {
   constructor(private _ps: PhotosService, private dialog: MatDialog) {}
 
-  // postNewPhoto(photos: any) {
-  //   this.dialog.open(AddPhotoDialogComponent);
-  // }
   deletePhoto(id: number, photos: tPhotos[]) {
     this.dialog
       .open(ConfirmDialogComponent)

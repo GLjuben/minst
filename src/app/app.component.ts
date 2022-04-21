@@ -15,11 +15,11 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class AppComponent {
   photos: any[] = [];
-
   pageYoffset = 0;
   @HostListener('window:scroll', ['$event']) onScroll(event: any) {
     this.pageYoffset = window.pageYOffset;
   }
+
   constructor(
     private _ps: PhotosService,
     private _hps: HelpersPhotosService,
@@ -40,7 +40,6 @@ export class AppComponent {
   }
 
   editPhoto(photo: any) {
-    console.log(this.photos);
     this.dialog
       .open(AddPhotoDialogComponent, { data: photo })
       .afterClosed()
