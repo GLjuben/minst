@@ -4,3 +4,22 @@
   justify-content: center;
   align-items: center;
 }
+.btn-actions {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.btn-edit {
+  background: #48bfe3;
+  color: #fff !important;
+}
+
+.btn-add {
+  background: #48bfe3;
+  color: #fff !important;
+}
+
+.btn-add:hover {
+  background: #72efdd;
+}

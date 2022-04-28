@@ -1,0 +1,18 @@
+.act-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.btn-del {
+  color: #fff;
+  background: #c57446;
+}
+.btn-del:hover {
+  background: #dcab90;
+}
+.q-title {
+  margin: 15px auto !important;
+  font-size: 16px !important;
+  font-weight: normal;
+}

@@ -1,4 +1,10 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  HostListener,
+  ViewChild,
+  ElementRef,
+} from '@angular/core';
 import { ViewportScroller } from '@angular/common';
 
 import { PhotosService } from './services/photos.service';

@@ -21,6 +21,7 @@ export class HelpersPhotosService {
       .subscribe((confirm) => {
         if (confirm) {
           this._ps.deletephotoById(id).subscribe();
+          // photos.filter((photo) => photo.id !== id);
         }
       });
     return photos.filter((photo) => photo.id !== id);

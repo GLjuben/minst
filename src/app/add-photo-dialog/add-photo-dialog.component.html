@@ -23,9 +23,8 @@
     </mat-form-field>
 </div>
 
-<div mat-dialog-actions>
+<div mat-dialog-actions class="btn-actions">
+    <button mat-button class="btn-add" *ngIf="!editMode" (click)="addPhoto()">Add</button>
+    <button mat-button class="btn-edit" *ngIf="editMode" (click)="editPhoto()">Edit</button>
     <button mat-button [mat-dialog-close]>Cancel</button>
-    <button mat-button *ngIf="!editMode" (click)="addPhoto()">Add</button>
-    <button mat-button *ngIf="editMode" (click)="editPhoto()">Edit</button>
-
 </div>

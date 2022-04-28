@@ -1,83 +1,45 @@
 <div class="navbar">
-  <button mat-icon-button (click)="scrollToTop()">
+  <button class="home-btn" mat-icon-button (click)="scrollToTop()">
     <span class="material-icons home">
       home
-    </span>
-
-  </button>
-  <button (click)="scrollToTop()" class="scroll-to-top" *ngIf="pageYoffset > 0" mat-icon-button color="accent"
-    aria-label="icon button with an arrow icon">
-    <span class="material-icons arrow">
-      arrow_upward
     </span>
   </button>
   <button mat-raised-button color="primary" class="btn-add" (click)="openDialog()">Add photo</button>
 </div>
 
+<button (click)="scrollToTop()" class="scroll-to-top" *ngIf="pageYoffset > 25" mat-icon-button color="accent"
+  aria-label="icon button with an arrow icon">
+  <span class="material-icons arrow">
+    arrow_upward
+  </span>
+</button>
+
 <main *ngIf="photos" class="main-section">
   <div class="photos-list">
     <mat-card class="card-container" *ngFor="let photo of photos">
       <mat-card-header class="card-thumbnail">
+        <mat-card-title class="card-title" style="font-size: 20px;"> {{photo.title}}</mat-card-title>
         <img class="photo-thumbnail" [src]="photo.thumbnailUrl" [alt]="photo.title" />
-        <mat-card-title style="font-size: 20px;">{{photo.title}}</mat-card-title>
       </mat-card-header>
+
       <mat-card-content *ngIf="!photo.collapsed" class="img-content">
-        <img [src]="photo.url" [alt]="photo.title" />
+        <img [src]="photo.url" class="img-XL" [alt]="photo.title" />
         <div class="btn-edit-delete">
-          <button mat-raised-button color="warn" (click)="deletePhoto(photo.id)">Delete</button>
-          <button mat-raised-button color="primary" (click)="editPhoto(photo)">Edit</button>
+          <button mat-raised-button class="btn-edit" (click)="editPhoto(photo)">Edit</button>
+          <button mat-raised-button class="btn-del" (click)="deletePhoto(photo.id)">Delete</button>
         </div>
       </mat-card-content>
-      <mat-card-actions class="btn-actions">
 
+      <mat-card-actions class="btn-actions">
         <button mat-icon-button class="btn-action" (click)="photo.collapsed=false"><span class="material-icons">
             open_in_full
           </span></button>
-
-
         <button mat-icon-button class="btn-action" (click)="photo.collapsed=true"><span class="material-icons">
             close_fullscreen
           </span></button>
-
       </mat-card-actions>
+
     </mat-card>
   </div>
 
 </main>
-
-<!-- <div class="add-new-form" *ngIf="isEditModeOn">
-    <mat-form-field hintLabel="Photo url" appearance="fill">
-      <mat-label>Enter albumId</mat-label>
-      <input matInput #input placeholder="Album Id">
-      <mat-hint align="end">Album Id</mat-hint>
-      <hr />
-      <mat-label>Enter photo URL</mat-label>
-      <input matInput #input placeholder="Album Id">
-      <mat-hint align="end">URL</mat-hint>
-      <mat-label>Enter albumId</mat-label>
-      <hr />
-      <input matInput #input placeholder="Album Id">
-      <mat-hint align="end">Enter thumbnailUrl </mat-hint>
-      <mat-label>Enter albumId</mat-label>
-      <input matInput #input placeholder="Album Id">
-      <mat-hint align="end">Enter Album Id</mat-hint>
-    </mat-form-field>
-  </div>
-  <div class="add-new-form" *ngIf="isNewPhotoModeOn">
-    <mat-form-field hintLabel="Photo url" appearance="fill">
-      <mat-label>Enter albumId</mat-label>
-      <input matInput #input placeholder="Album Id">
-      <mat-hint align="end">Album Id</mat-hint>
-      <hr />
-      <mat-label>Enter photo URL</mat-label>
-      <input matInput #input placeholder="Album Id">
-      <mat-hint align="end">URL</mat-hint>
-      <mat-label>Enter albumId</mat-label>
-      <hr />
-      <input matInput #input placeholder="Album Id">
-      <mat-hint align="end">Enter thumbnailUrl </mat-hint>
-      <mat-label>Enter albumId</mat-label>
-      <input matInput #input placeholder="Album Id">
-      <mat-hint align="end">Enter Album Id</mat-hint>
-    </mat-form-field>
-  </div> -->
